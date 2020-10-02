@@ -1,5 +1,5 @@
 
-export class Photo {
+ class Photo {
     constructor(width = 8, height = 10){
         this.width = width;
         this.height = height;
@@ -25,7 +25,7 @@ export class Photo {
         return `This is a ${this.width} by ${this.height} photo and it costs $${this.price()}`;
     }   
 }
-class MattedPhoto extends Photo{
+ class MattedPhoto extends Photo{
     constructor(width, height, color){
         super(width,height);
         this.color = color;
@@ -38,7 +38,7 @@ class MattedPhoto extends Photo{
         return `This is a ${this.width} by ${this.height} matted ${this.color} photo and it costs $${this.price()}`;
     }    
 }
-    class FramedPhoto extends Photo{
+ class FramedPhoto extends Photo{
     constructor(width, height, material,style){
         super(width,height);
         this.material = material
@@ -53,20 +53,8 @@ class MattedPhoto extends Photo{
     }    
 }
 
-let photo1 = new Photo();
-console.log(photo1.toString());
-
-let photo2 = new Photo(12, 15);
-console.log(photo2.toString());
-
-let mattedPhoto1 = new MattedPhoto(9,12,'Red');
-console.log(mattedPhoto1.toString());
-
-let mattedPhoto2 = new MattedPhoto(10,11,'White');
-console.log(mattedPhoto2.toString());
-
-let framedPhoto1 = new FramedPhoto(5,12,'silver','modern');
-console.log(framedPhoto1.toString());
-
-let framedPhoto2 = new FramedPhoto(7,12,'gold','classic');
-console.log(framedPhoto2.toString());
+module.exports = {
+ Photo,
+ MattedPhoto,
+ FramedPhoto
+}
